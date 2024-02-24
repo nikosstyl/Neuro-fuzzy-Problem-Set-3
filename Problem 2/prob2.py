@@ -55,7 +55,7 @@ def train_rbf_network(data_points, targets, centers, learning_rate, epochs):
             print('Loss exploded, stopping training', end='\n\n')
             raise ValueError(f'Loss exploded: {loss:.4f} > 1e4')
         elif abs(loss - old_loss) < 1e-6:
-            print('Converged, stopping training', end='\n\n')
+            print('\nConverged, stopping training', end='\n\n')
             break
         old_loss = loss
 
@@ -89,8 +89,9 @@ def compute_rbf (learning_rate, num_centers, epochs=2000):
 
 
 # # Parameters
-learning_rates = [0.001, 0.01, 0.1]
-num_centers = [4, 8, 12, 20]
+learning_rates = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1]
+# num_centers = [4, 8, 12, 20]
+num_centers = [12]
 
 p_values = np.linspace(-4, 4, 100)
 
@@ -111,19 +112,20 @@ p_values = np.linspace(-4, 4, 100)
 
 for lr in learning_rates:
     for center in num_centers:
+        print(f'\nLearning rate: {lr}, Number of centers: {center}', end='\n\n')
         response = compute_rbf(lr, center, epochs=int(2e4))
 
         # Plot the network response
-        fig = plt.figure(figsize=(6.5, 5))
-        plt.plot(p_values, target_function(p_values), label='Target function')
-        plt.plot(p_values, response, label='Network response', linestyle='dashed')
-        plt.scatter(data_points, targets, color='red', label='Training points')
-        plt.legend()
-        plt.grid(True)
-        plt.xlabel('p')
-        plt.ylabel('g(p)')
-        plt.title(f'Target function and RBF network response, a = {lr}, # of centers = {center}')
+        # fig = plt.figure(figsize=(6.5, 5))
+        # plt.plot(p_values, target_function(p_values), label='Target function')
+        # plt.plot(p_values, response, label='Network response', linestyle='dashed')
+        # plt.scatter(data_points, targets, color='red', label='Training points')
+        # plt.legend()
+        # plt.grid(True)
+        # plt.xlabel('p')
+        # plt.ylabel('g(p)')
+        # plt.title(f'Target function and RBF network response, a = {lr}, # of centers = {center}')
 
-        fig.tight_layout()
-        plt.savefig(f'prob2_response_a_{lr}_Cnum_{center}.pdf', format='pdf')
-        # plt.show()
+        # fig.tight_layout()
+        # plt.savefig(f'prob2_response_a_{lr}_Cnum_{center}.pdf', format='pdf')
+        # # plt.show()
