@@ -38,6 +38,7 @@ def train_rbf_network(data_points, targets, centers, learning_rate, epochs):
     # Initialize weights and bias to small random values
     weights = np.random.randn(len(centers))
     bias = np.random.randn(1)
+    old_loss = 0
 
     # Training loop
     for epoch in range(epochs):
@@ -53,9 +54,10 @@ def train_rbf_network(data_points, targets, centers, learning_rate, epochs):
         if loss > 1e4:
             print('Loss exploded, stopping training', end='\n\n')
             raise ValueError(f'Loss exploded: {loss:.4f} > 1e4')
-        elif loss < 3e-2:
+        elif abs(loss - old_loss) < 1e-6:
             print('Converged, stopping training', end='\n\n')
             break
+        old_loss = loss
 
         # Compute gradients
         error = predictions - targets
@@ -87,31 +89,41 @@ def compute_rbf (learning_rate, num_centers, epochs=2000):
 
 
 # # Parameters
-lr = [0.001, 0.01, 0.1]
+learning_rates = [0.001, 0.01, 0.1]
 num_centers = [4, 8, 12, 20]
 
-fig, (target_plt, train_plt) = plt.subplots(2,1, figsize=(10, 7))
 p_values = np.linspace(-4, 4, 100)
 
 # Plot the function and the selected data points
-target_plt.plot(p_values, target_function(p_values), label='Target function')
-target_plt.scatter(data_points, targets, color='red', label='Training points')
-target_plt.legend()
-target_plt.grid(True)
-target_plt.set_xlabel('p')
-target_plt.set_ylabel('g(p)')
-target_plt.set_title('Target function and training data points')
+# Run only once
 
-response = compute_rbf(0.01, num_centers=12, epochs=int(2e4))
+# plt.plot(p_values, target_function(p_values), label='Target function')
+# plt.scatter(data_points, targets, color='red', label='Training points')
+# plt.legend()
+# plt.grid(True)
+# plt.xlabel('p')
+# plt.ylabel('g(p)')
+# plt.title('Target function and training data points')
+# fig.tight_layout()
+# plt.savefig('prob2_targetFunc_dataPoints.pdf', format='pdf')
+# plt.show()
+# exit()
 
-# Plot the network response
-train_plt.plot(p_values, target_function(p_values), label='Target function')
-train_plt.plot(p_values, response, label='Network response', linestyle='dashed')
-train_plt.scatter(data_points, targets, color='red', label='Training points')
-train_plt.legend()
-train_plt.set_xlabel('p')
-train_plt.set_ylabel('g(p)')
-train_plt.set_title('Target function and RBF network response')
+for lr in learning_rates:
+    for center in num_centers:
+        response = compute_rbf(lr, center, epochs=int(2e4))
 
-fig.tight_layout()
-plt.show()
+        # Plot the network response
+        fig = plt.figure(figsize=(6.5, 5))
+        plt.plot(p_values, target_function(p_values), label='Target function')
+        plt.plot(p_values, response, label='Network response', linestyle='dashed')
+        plt.scatter(data_points, targets, color='red', label='Training points')
+        plt.legend()
+        plt.grid(True)
+        plt.xlabel('p')
+        plt.ylabel('g(p)')
+        plt.title(f'Target function and RBF network response, a = {lr}, # of centers = {center}')
+
+        fig.tight_layout()
+        plt.savefig(f'prob2_response_a_{lr}_Cnum_{center}.pdf', format='pdf')
+        # plt.show()
