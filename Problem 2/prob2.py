@@ -89,7 +89,8 @@ def compute_rbf (learning_rate, num_centers, epochs=2000):
 
 
 # # Parameters
-learning_rates = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1]
+# learning_rates = [0.001, 0.005, 0.01]
+learning_rates = [0.05]
 # num_centers = [4, 8, 12, 20]
 num_centers = [12]
 
@@ -116,16 +117,16 @@ for lr in learning_rates:
         response = compute_rbf(lr, center, epochs=int(2e4))
 
         # Plot the network response
-        # fig = plt.figure(figsize=(6.5, 5))
-        # plt.plot(p_values, target_function(p_values), label='Target function')
-        # plt.plot(p_values, response, label='Network response', linestyle='dashed')
-        # plt.scatter(data_points, targets, color='red', label='Training points')
-        # plt.legend()
-        # plt.grid(True)
-        # plt.xlabel('p')
-        # plt.ylabel('g(p)')
-        # plt.title(f'Target function and RBF network response, a = {lr}, # of centers = {center}')
+        fig = plt.figure(figsize=(6.5, 5))
+        plt.plot(p_values, target_function(p_values), label='Target function')
+        plt.plot(p_values, response, label='Network response', linestyle='dashed')
+        plt.scatter(data_points, targets, color='red', label='Training points')
+        plt.legend()
+        plt.grid(True)
+        plt.xlabel('p')
+        plt.ylabel('g(p)')
+        plt.title(f'Target function and RBF network response, a = {lr}, # of centers = {center}')
 
-        # fig.tight_layout()
+        fig.tight_layout()
         # plt.savefig(f'prob2_response_a_{lr}_Cnum_{center}.pdf', format='pdf')
-        # # plt.show()
+        plt.show()
