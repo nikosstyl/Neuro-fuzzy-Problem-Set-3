@@ -1,12 +1,12 @@
 % !TeX spellcheck = en_US
 \section{Problem 8}
 The term "ordinary subset of level $\alpha$ in fuzzy set theory refers to a non-fuzzy subset that is created from a fuzzy subset by taking into consideration only those elements whose degrees of membership are at least $\alpha$. In essence, it's a threshold-based selection from a fuzzy set in which each element is only included if its membership score is greater than or equal to $\alpha$.\\
-Conversely, this idea is extended to pairs of components for a fuzzy relation by the "ordinary relation of level $\alpha$". A set of ordered pairs with corresponding degrees of membership that indicate the strength of the relationship between the elements form a fuzzy relation. Thus, the set of all pairs whose membership in the fuzzy relation is at least $\alpha$ is the ordinary relation of level $\alpha$. Both concepts are useful in transforming fuzzy sets and relations into their crisp counterparts, providing a bridge between fuzzy and classical set theory.\\
+Conversely, this idea is extended to pairs of components for a fuzzy relation by the "ordinary relation of level $\alpha$". A set of ordered pairs with corresponding degrees of membership that indicate the strength of the relationship between the elements form a fuzzy relation. Thus, the set of all pairs whose membership in the fuzzy relation is at least $\alpha$ is the ordinary relation of level $\alpha$. \\
 
 Analytically, the ordinary relation of level $\alpha$ for a fuzzy relation is defined as the set of all pairs $(x,y)$ for which the membership function $\mu_{\tilde{R}}(x,y)$ is greater than or equal to $\alpha$. Alternatively, it is a crisp set that is derived from the fuzzy relation by incorporating all element pairs with a degree of membership greater than the specified level $\alpha$\\
 
 For a fuzzy relation with a membership function $\mu_{\tilde{R}}(x,y) = 1 - \frac{1}{1+x^2+y^2}$, the ordinary relation of level $0.3$ is the set:\\
-$R_{0.3} = {(x,y) | \mu_{\tilde{R}}(x,y) \geq 0.3}$
+$R_{0.3} = {(x,y) | \mu_{\tilde{R}}(x,y) \geq 0.3}$\\
 This means you are looking for all the pairs $(x,y)$ where the membership value is at least $0.3$.\\
 
 To determine analytically the ordinary relation of level $0.3$, we will solve the inequality
