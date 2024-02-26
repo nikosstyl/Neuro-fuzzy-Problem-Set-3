@@ -1,1 +1,43 @@
 \section{Problem 10}
+The min-max composition of fuzzy relations is a method for combining two fuzzy relations to produce a new fuzzy relation. \\
+Given two fuzzy relations $R1$ and $R2$, with membership functions $\mu_{\tilde{R1}}(x,y)$ and $\mu_{\tilde{R2}}(y,z)$ respectively, the min-max composition $R = R1 \circ R2 $ has a membership function defined for each pair $(x,z)$ by:
+\begin{equation}
+	\mu_R(x, z) = \max_{y} \min(\mu_{R1}(x, y), \mu_{R2}(y, z)
+\end{equation}
+For better understanding, we will analyse the expression
+\begin{itemize}
+	\item $\min(\mu_{R1}(x, y), \mu_{R2}(y, z)$: For a fixed $x$ and $z$, and for each intermediate value of $y$, we must find the minimum membership value between 
+	�
+	�
+	1
+	(
+	�
+	,
+	�
+	)
+	μ 
+	R1
+	​
+	(x,y) and 
+	�
+	�
+	2
+	(
+	�
+	,
+	�
+	)
+	μ 
+	R2
+	​
+	. This minimum value represents the strongest constraint on the relationship between 
+	�
+	x and 
+	�
+	z via the intermediary 
+	�
+	y.
+	
+\end{itemize}
+
+	

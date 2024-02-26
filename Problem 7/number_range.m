@@ -9,8 +9,8 @@ mu_approx1020((x >= 18) & (x < 20)) = (20 - x((x >= 18) & (x < 20))) / (20 - 18)
 
 % Plot
 figure;
-plot(x, mu_approx1020);
-title('Fuzzy Membership Function for Numbers Approximately Between 10 and 20');
+plot(x, mu_approx1020,'b');
+title('Fuzzy Membership Function');
 xlabel('Number Value');
 ylabel('Degree of Membership');
 
