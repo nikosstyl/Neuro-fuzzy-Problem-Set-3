@@ -2,6 +2,13 @@
 
 | Problem | Solved | Written |
 |---------|--------|---------|
-| 1       | :heavy_check_mark: | :white_check_mark: |
-| 2       |        |         |
-| 3       |        |         |
+| 1       |  No    |   No    |
+| 2       |**Yes** | **Yes** |
+| 3       |  **Yes**   |   **Yes**   |
+| 4       |  No    |   No    |
+| 5       |  No    |   No    |
+| 6       |  No    |   No    |
+| 7       |  No    |   No    |
+| 8       |  No    |   No    |
+| 9       |  No    |   No    |
+| 10      |  No    |   No    |
