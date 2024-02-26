@@ -9,6 +9,8 @@ p3 = np.array([-2, -2])
 # Define the learning rate
 alpha = 0.5
 
+threshold = 1e-5
+
 # Initialize the weight vectors for the two neurons
 w2 = np.array([1, 0])
 w1 = np.array([0, 1])
@@ -18,6 +20,8 @@ order = [p1, p2, p3, p2, p3, p1]
 
 # Train the competitive layer
 for epoch in range(100):  # Number of epochs
+    w1_old = w1.copy()
+    w2_old = w2.copy()
     for p in order:
         # Calculate the distances
         d1 = np.linalg.norm(p - w1)
@@ -34,6 +38,10 @@ for epoch in range(100):  # Number of epochs
     plt.plot(epoch, w1[1], 'x', color='b')
     plt.plot(epoch, w2[0], '*', color='g')
     plt.plot(epoch, w2[1], '.', color='orange')
+    
+    if np.linalg.norm(w1 - w1_old) < threshold and np.linalg.norm(w2 - w2_old) < threshold:
+        print(f'Converged at epoch {epoch}')
+        break
 
 print('W1:')
 print(w1, end='\n\n')
