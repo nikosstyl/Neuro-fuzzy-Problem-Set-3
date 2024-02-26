@@ -25,4 +25,24 @@ we are using the Gaussian function centered at 0.
 \vspace{5mm}
 
 \underline{MEDIUM-WEIGHT MEN}\\
-Assuming the average weight range for medium-weight men is between 70kg and 90kg, with the peak at 80kg, we can define a triangular membership function.
+Assuming the average weight range for medium-weight men is between 70kg and 90kg, with the peak at 75kg, we used another Gaussian function centered around 75kg, considering an average weight range. This function assigns a higher degree of membership to weights close to 75kg, with the membership degree decreasing for weights further away from this center. This approach models the fuzzy concept of "medium weight."
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{../Problem 7/medium_weight.pdf}
+	\caption{Fuzzy membership function for Medium\_weighted Men}	
+\end{figure}
+\vspace{5mm}
+
+\underline{NUMBEES APPROXIMATELY BETWEEN 10-20}\\
+For numbers approximately between 10 and 20, a trapezoidal membership function is employed to model numbers in this range, providing a clear illustration of numbers with a high degree of membership strictly within the 10 to 20 range, and a linear decrease to 0 as numbers diverge from this range. This function effectively captures the fuzzy boundaries of being "approximately between" two values.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{../Problem 7/number_range.pdf}
+	\caption{Fuzzy membership function for Numbers approximately between 10 and 20}	
+\end{figure}
+\vspace{5mm}
+
+To summarize, modeling expressions as fuzzy subsets involves assigning a degree of membership to each element relative to a particular set based on its characteristics. 
+In fuzzy logic, the choice of membership function (such as sigmoid, Gaussian, or trapezoidal) depends on the specific context and the nature of the fuzzy set being modeled. These functions help in translating vague or imprecise terms into a quantitative framework that can be analyzed and manipulated mathematically.
