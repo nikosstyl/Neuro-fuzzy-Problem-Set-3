@@ -6,7 +6,7 @@ Below are examples of how you might model the given expressions as fuzzy subsets
 \underline{LARGE INTEGERS}\\
 For \say{Large integers}, we need a membership function that gradually increases as the integers become larger. A simple way to model this is to use a function that increases the membership score as the number exceeds a certain threshold. However, defining \say{large} is subjective and can vary depending on the context. For simplicity, let's assume integers greater than 100 are considered large, but the transition starts at 50, becoming more \say{large} as the number increases.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\textwidth]{../Problem 7/large_int.pdf}
 	\caption{Fuzzy membership function for Large Integers}	
@@ -35,7 +35,7 @@ Assuming the average weight range for medium-weight men is between 70kg and 90kg
 \end{figure}
 \vspace{5mm}
 
-\underline{NUMBEES APPROXIMATELY BETWEEN 10-20}\\
+\underline{NUMBERS APPROXIMATELY BETWEEN 10-20}\\
 For numbers approximately between 10 and 20, a trapezoidal membership function is employed to model numbers in this range, providing a clear illustration of numbers with a high degree of membership strictly within the 10 to 20 range, and a linear decrease to 0 as numbers diverge from this range. This function effectively captures the fuzzy boundaries of being \say{approximately between} two values.
 
 \begin{figure}[H]
