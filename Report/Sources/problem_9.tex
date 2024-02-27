@@ -1,1 +1,30 @@
 \section{Problem 9}
+To calculate the index of fuzziness $v$ of a fuzzy subset $A$ defined on a fuzzy subset $A$ defined on a reference set $E = [0, \alpha] \subseteq \mathbb{R}$ with a membership function, we can use the following general formula for the index of fuzziness:
+\begin{equation}
+	\nu_L(\tilde{A}) = \frac{1}{|E|} \sum_{x \in E} \min(\mu_{\tilde{A}}(x), 1 - \mu_{\tilde{A}}(x))
+\end{equation}
+In a continuous domain, this becomes:
+\begin{equation}
+	\nu_L(\tilde{A}) = \frac{1}{\text{measure}(E)} \int_{E} \min(\mu_{\tilde{A}}(x), 1 - \mu_{\tilde{A}}(x)) \, dx
+\end{equation}
+
+\underline{Question A}\\
+Given the specific membership function $\mu_{\tilde{A}}(x) = \dfrac{x^2}{\alpha^2}$, for $x \in [0, \alpha]$ and assuming $E = [0, \alpha]$ the linear index of fuzziness can be calculated directly because the measure of $E$ is $α$. Therefore, the formula for the linear index of fuzziness over the interval 
+$[0,α]$ is:
+\begin{equation}
+	\nu_L(\tilde{A}) = \dfrac{1}{\alpha} \int_{0}^{\alpha} \min\left( \dfrac{x^2}{\alpha^2}, 1 - \dfrac{x^2}{\alpha^2} \right) dx
+\end{equation}
+However, since $\dfrac{x^2}{\alpha^2}$ increases monotically from $0$ to $1$ as $x$ goes from $0$ to $\alpha$. and the function $\min\left(\frac{x^2}{\alpha^2}, 1 - \frac{x^2}{\alpha^2}\right)
+$ is symmetric around $x = \dfrac{\alpha}{\sqrt{2}}$, where $\dfrac{x^2}{\alpha^2} = 1 - \dfrac{x^2}{\alpha^2}$, the integral simplifies to $2$ times the integral from $0$ to $\dfrac{\alpha}{\sqrt{2}}:$
+\\
+\begin{gather}
+	\nu_L(\tilde{A}) = \frac{2}{\alpha} \int_{0}^{\frac{\alpha}{\sqrt{2}}} \frac{x^2}{\alpha^2} \, dx \\
+	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \int_{0}^{\frac{\alpha}{\sqrt{2}}} x^2 \, dx\\
+	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \left[ \frac{x^3}{3} \right]_{0}^{\frac{\alpha}{\sqrt{2}}} \\
+	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \cdot \frac{\left(\frac{\alpha}{\sqrt{2}}\right)^3}{3}\\
+	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \cdot \frac{\alpha^3}{3\sqrt{8}} \\
+	\nu_L(\tilde{A}) = \frac{\sqrt{2}}{3}
+\end{gather}
+This result represents the linear index of fuzziness of $A$ which is independent of $\alpha$ due to the normalization over the interval $[0,\alpha]$.
+
+
