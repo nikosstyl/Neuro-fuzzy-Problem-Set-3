@@ -9,6 +9,6 @@
 | 5       |  **Yes**    |   **Yes**    |
 | 6       |  No    |   No    |
 | 7       |  **Yes**   |  **Yes**   |
-| 8       |  No    |   No    |
+| 8       |  **Yes**    |   **Yes**   |
 | 9       |  No    |   No    |
 | 10      |  **Yes**    |   **Yes**    |
