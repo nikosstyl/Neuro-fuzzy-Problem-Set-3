@@ -1,2 +1,16 @@
-
+% !TeX spellcheck = en_US
 \section{Problem 1}
+
+In this problem, we want to design a RBF classifier by hand. The input data are shown below. The network should produce the following output:
+\[
+out_{RBF} = \left\{
+\begin{array}{cc}
+	> 0,& \quad \text{when input vector is in the designated area}\\
+	< 0,& \quad \text{otherwise}
+\end{array}
+\right.
+\]
+
+The designated area is consisted of two circles with centers at $\left( -1, 1.5 \right)$, $\left( 2,2 \right)$ and radius of $\rho_1 = 0.5$, $\rho_2 = 0.25$ respectively.
+
+Following the standard procedure for an RBF network, the network will have two layers. On the RBF layer, there will be two neurons, each corresponding to one of the designated regions.
