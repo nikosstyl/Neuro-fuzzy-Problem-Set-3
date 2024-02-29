@@ -26,5 +26,41 @@ $ is symmetric around $x = \dfrac{\alpha}{\sqrt{2}}$, where $\dfrac{x^2}{\alpha^
 	\nu_L(\tilde{A}) = \frac{\sqrt{2}}{3}
 \end{gather}
 This result represents the linear index of fuzziness of $A$ which is independent of $\alpha$ due to the normalization over the interval $[0,\alpha]$.
+\vspace{5mm}
 
+\underline{Question B}\\
+Given the membership function 
+\begin{equation}
+	\mu_{\tilde{A}}(x) = 
+		 \begin{cases} 
+			\dfrac{4x^2}{\alpha^2} & \text{if } 0 \leq x \leq \dfrac{\alpha}{2}, \\
+			\dfrac{4(x-\alpha)^2}{\alpha^2} & \text{if } \dfrac{\alpha}{2} < x \leq \alpha.
+		\end{cases}
+\end{equation}
+The calculation for the index of fuzziness $v(\tilde{A})$ involves evaluating two integrals:
+\begin{equation}
+	\nu(\tilde{A}) = \frac{1}{\alpha} \left( \int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right)
+\end{equation}
+After simplifying, this expression remains in terms of integrals of absolute values:
+\begin{equation}
+	\frac{1}{\alpha} \left( \int_{0}^{\frac{\alpha}{2}} \left| 0.5 - \frac{4x^2}{\alpha^2} \right| \, dx + \int_{\frac{\alpha}{2}}^{\alpha} \left| 3.5 - \frac{8x}{\alpha} + \frac{4x^2}{\alpha^2} \right| \, dx \right)
+\end{equation}
+To proceed, we need to evaluate these integrals explicitly. However, the complexity of absolute value functions requires careful piecewise integration.For an explicit solution, these integrals would be evaluated considering the behavior of the functions within the given intervals. Given the complexity of directly integrating these absolute value functions symbolically, a numerical approach or further simplification by analyzing the sign changes in the functions over the intervals may be needed for a complete solution.\\
 
+Let's attempt a further simplification by evaluating the expressions within the absolute values to determine the points of sign change and then integrate accordingly. ​\\
+
+The critical points for the functions within the absolute values are:
+\begin{itemize}
+	\item For $\dfrac{4x^2}{\alpha^2} - 0.5$:\\
+		The critical points are at $x = \pm 0.354\alpha$, but given the restriction $0 \leq x \leq \dfrac{\alpha}{2}$, only $\mathbf{x = 0.354\alpha}$ is acceptable.
+	
+	\item  For $\dfrac{4(x-\alpha^2}{\alpha^2} - 0.5$:\\
+		The critical points are at $x = 0.646\alpha$ and $x = 1.354\alpha$, but given the restriction $\dfrac{\alpha}{2} \leq x \leq \alpha$, only $\mathbf{x = 0.646\alpha}$ is acceptable.
+\end{itemize}
+Since we're interested in the intervals $0 \leq x \leq \dfrac{\alpha}{2}$ and $\dfrac{\alpha}{2} < x \leq \alpha$, we recognize that the function changes behavior at these critical points. \\
+Given the complexity and to provide a precise answer, let's refine the approach by directly integrating the functions over their specified intervals, acknowledging that the absolute value's impact was incorrectly applied. We should calculate the fuzziness index by integrating the membership function's deviation from 0.5 where applicable, considering the piecewise nature of the function:
+\begin{itemize}
+	\item $\int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx$
+	\item $\int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx$
+	
+\end{itemize}
