@@ -7,7 +7,7 @@
 | 3       |  **Yes**   |   **Yes**   |
 | 4       |  **Yes**    |   **Yes**    |
 | 5       |  **Yes**    |   **Yes**    |
-| 6       |  No    |   No    |
+| 6       |  **Yes**    |   No    |
 | 7       |  **Yes**   |  **Yes**   |
 | 8       |  **Yes**    |   **Yes**   |
 | 9       |  No    |   No    |
