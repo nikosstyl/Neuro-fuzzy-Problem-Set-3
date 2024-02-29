@@ -26,6 +26,7 @@ At the end, all cost functions are shown in figure~\ref{fig:prob5_mse}.
 
 The observed decrease in MSE with an increase in the number of training samples is indicative of the LSTM's capacity to learn and model the dependencies in the time series data. LSTMs are designed to capture long-term relationships, which is particularly advantageous for AR models where the future value is a function of past values.
 
-The continuous improvement in prediction accuracy with more data suggests that the LSTM has not reached its capacity. Typically, there is a concern that a model may overfit to the training data if given too many examples; however, in this case, overfitting does not appear to be an issue. This could be due to the stochastic nature of the AR process and the noise term, which require the model to generalize well to perform accurately.
+The continuous improvement in prediction accuracy with more data suggests that the LSTM has not reached its capacity. Typically, there is a concern that a model may overfit to the training data if given too many examples.
+However, in this case, overfitting does not appear to be an issue. This could be due to the stochastic nature of the AR process and the noise term, which require the model to generalize well to perform accurately.
 
 It's also worth noting the learning dynamics of LSTM networks. During the initial phase of training, the network rapidly learns the gross features of the time series. As training progresses, the rate of improvement in MSE slows down, suggesting that the model begins to refine its understanding of finer details within the data. This refinement process requires more nuanced examples, which can only be provided by larger datasets.
