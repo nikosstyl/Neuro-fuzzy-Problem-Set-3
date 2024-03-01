@@ -2,7 +2,7 @@
 
 | Problem | Solved | Written |
 |---------|--------|---------|
-| 1       |  **Yes**    |   No    |
+| 1       |  **Yes**    |  **Yes**    |
 | 2       |**Yes** | **Yes** |
 | 3       |  **Yes**   |   **Yes**   |
 | 4       |  **Yes**    |   **Yes**    |
