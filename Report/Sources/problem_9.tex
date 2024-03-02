@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_US
 \section{Problem 9}
 To calculate the index of fuzziness $v$ of a fuzzy subset $A$ with reference set $E = [0, \alpha] \subseteq \mathbb{R}$ and membership function $\mu_{\tilde{A}}(x)$, we can use the following general formula:
 \begin{equation}
@@ -45,8 +46,8 @@ The calculation for the index of fuzziness $v(\tilde{A})$ involves evaluating tw
 
 \begin{equation}
 	\nu(\tilde{A}) = \dfrac{1}{\alpha} \left( \int_{0}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\dfrac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right)
+	\label{eq:main_eq}
 \end{equation}
-\label{eq:main_eq}
 
 The absolute value in each integral $\left| \dfrac{4x^2}{\alpha^2} - 0.5 \right|$ and $\left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right|$
 represents the deviation of the membership function from the point of maximum uncertainty $0.5$. This deviation is integrated over the domain of $x$ to calculate the total "fuzziness" of the set.\\
@@ -96,8 +97,8 @@ Having these two conditions in mind, we will calculate seperately the integrals 
 To sum up, the total value is \\
 \begin{equation}
 	\displaystyle\int_{0}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx = 0.153\alpha
+	\label{eq:integral1}
 \end{equation}
-\label{eq:integral1}
 \vspace{7mm}
 
 \underline{Integral 2}\\
@@ -120,10 +121,10 @@ $\end{itemize}
 To sum up, the total value is \\
 \begin{equation}
 	\displaystyle \int_{\frac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = 0.236\alpha
+	\label{eq:integral2}
 \end{equation}
-\label{eq:integral2}
 
-After a lot of calculation, by summing up (Equation~\ref{eq:integral1}) and (Equation ~\ref{eq:integral2}) into (Equation ~\ref{eq:main_eq}), we have:
+After a lot of calculation, by summing up (Equation \ref{eq:integral1}) and (Equation \ref{eq:integral2}) into (Equation \ref{eq:main_eq}), we have:
 \begin{gather*}
 	\nu(\tilde{A}) = \dfrac{1}{\alpha} \left( \int_{0}^{\frac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\frac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right) \\
 	= \dfrac{1}{\alpha}\left(0.153\alpha + 0.236\alpha \right) \\
