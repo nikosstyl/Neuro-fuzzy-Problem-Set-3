@@ -11,20 +11,22 @@ In a continuous domain, this becomes:
 \underline{Question A}\\
 Given the specific membership function $\mu_{\tilde{A}}(x) = \dfrac{x^2}{\alpha^2}$, for $x \in [0, \alpha]$ and assuming $E = [0, \alpha]$, the linear index of fuzziness can be calculated directly because the measure of $E$ is $\alpha$. Therefore, the formula for the linear index of fuzziness over the interval 
 $[0,\alpha]$ is:
+
 \begin{equation}
 	\nu_L(\tilde{A}) = \dfrac{1}{\alpha} \int_{0}^{\alpha} \min\left( \dfrac{x^2}{\alpha^2}, 1 - \dfrac{x^2}{\alpha^2} \right) dx
 \end{equation}
+
 However, since $\dfrac{x^2}{\alpha^2}$ increases monotically from $0$ to $1$ as $x$ goes from $0$ to $\alpha$. and the function $\min\left(\frac{x^2}{\alpha^2}, 1 - \frac{x^2}{\alpha^2}\right)
 $ is symmetric around $x = \dfrac{\alpha}{\sqrt{2}}$, where $\dfrac{x^2}{\alpha^2} = 1 - \dfrac{x^2}{\alpha^2}$, the integral simplifies to $2$ times the integral from $0$ to $\dfrac{\alpha}{\sqrt{2}}:$
 \\
-\begin{gather}
+\begin{gather*}
 	\nu_L(\tilde{A}) = \frac{2}{\alpha} \int_{0}^{\frac{\alpha}{\sqrt{2}}} \frac{x^2}{\alpha^2} \, dx \\
 	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \int_{0}^{\frac{\alpha}{\sqrt{2}}} x^2 \, dx\\
 	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \left[ \frac{x^3}{3} \right]_{0}^{\frac{\alpha}{\sqrt{2}}} \\
 	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \cdot \frac{\left(\frac{\alpha}{\sqrt{2}}\right)^3}{3}\\
 	\nu_L(\tilde{A}) = \frac{2}{\alpha^3} \cdot \frac{\alpha^3}{3\sqrt{8}} \\
 	\nu_L(\tilde{A}) = \frac{\sqrt{2}}{6}
-\end{gather}
+\end{gather*}
 This result represents the linear index of fuzziness of $A$ which is independent of $\alpha$ due to the normalization over the interval $[0,\alpha]$.
 \vspace{5mm}
 
@@ -33,25 +35,27 @@ Given the membership function
 \begin{equation}
 	\mu_{\tilde{A}}(x) = 
 		 \begin{cases} 
-			\dfrac{4x^2}{\alpha^2} & \text{if } 0 \leq x \leq \dfrac{\alpha}{2}, \\
+		\displaystyle	\dfrac{4x^2}{\alpha^2} & \text{if } 0 \leq x \leq \dfrac{\alpha}{2}, \\
 			
-			\dfrac{4(x-\alpha)^2}{\alpha^2} & \text{if } \dfrac{\alpha}{2} < x \leq \alpha.
+		\dfrac{4(x-\alpha)^2}{\alpha^2} & \text{if } \dfrac{\alpha}{2} < x \leq \alpha.
 		\end{cases}
 \end{equation}
+
 The calculation for the index of fuzziness $v(\tilde{A})$ involves evaluating two integrals:
+
 \begin{equation}
-	\nu(\tilde{A}) = \frac{1}{\alpha} \left( \int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right)
+	\nu(\tilde{A}) = \dfrac{1}{\alpha} \left( \int_{0}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\dfrac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right)
 \end{equation}
 \label{eq:main_eq}
 
-The absolute value in each integral $\left| \frac{4x^2}{\alpha^2} - 0.5 \right|$ and $\left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right|$
-represents the deviation of the membership function from the point of maximum uncertainty $(0.5)$. This deviation is integrated over the domain of $x$ to calculate the total "fuzziness" of the set.\\
+The absolute value in each integral $\left| \dfrac{4x^2}{\alpha^2} - 0.5 \right|$ and $\left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right|$
+represents the deviation of the membership function from the point of maximum uncertainty $0.5$. This deviation is integrated over the domain of $x$ to calculate the total "fuzziness" of the set.\\
 
-After simplifying, this expression remains in terms of integrals of absolute values:
+After simplifying, this expression remains in terms of integrals of absolute values.
 %\begin{equation}
 	%\frac{1}{\alpha} \left( %\int_{0}^{\frac{\alpha}{2}} \left| %0.5 - \frac{4x^2}{\alpha^2} \right| %\, dx + %\int_{\frac{\alpha}{2}}^{\alpha} %\left| 3.5 - \frac{8x}{\alpha} + %\frac{4x^2}{\alpha^2} \right| \, dx %\right)
 %\end{equation}
-To proceed, we need to evaluate these integrals explicitly. However, the complexity of absolute value functions requires careful piecewise integration.For an explicit solution, these integrals would be evaluated considering the behavior of the functions within the given intervals. Given the complexity of directly integrating these absolute value functions symbolically, a numerical approach or further simplification by analyzing the sign changes in the functions over the intervals may be needed for a complete solution.\\
+To proceed, we need to evaluate these integrals explicitly. However, the complexity of absolute value functions requires careful piecewise integration. For an explicit solution, these integrals would be evaluated considering the behavior of the functions within the given intervals. Given the complexity of directly integrating these absolute value functions symbolically, a numerical approach or further simplification by analyzing the sign changes in the functions over the intervals may be needed for a complete solution.\\
 
 Let's attempt a further simplification by evaluating the expressions within the absolute values to determine the points of sign change and then integrate accordingly. ​\\
 
@@ -67,65 +71,66 @@ Since we're interested in the intervals $0 \leq x \leq \dfrac{\alpha}{2}$ and $\
 
 Given the complexity and to provide a precise answer, we must refine the approach by directly integrating the functions over their specified intervals. We should calculate the fuzziness index by integrating the membership function's deviation from 0.5 where applicable, considering the piecewise nature of the function:
 \begin{itemize}
-	\item $\displaystyle \int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx$
-	\item $\displaystyle \int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx$	
+	\item $\displaystyle \int_{0}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx$
+	\item $\displaystyle \int_{\dfrac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx$	
 \end{itemize}
 
 Now, we need to calculate these two integrals based on their crtitical points and their intervals.\\
 
 \underline{Integral 1}\\
 
-$\displaystyle \int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx = \displaystyle \int_{0}^{0.354\alpha} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx+ \int_{0.354\alpha}^{\frac{\alpha}{2}} \left|\frac{4x^2}{\alpha^2} - 0.5\right| \, dx$
+$\displaystyle \int_{0}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx = \displaystyle \int_{0}^{0.354\alpha} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx+ \int_{0.354\alpha}^{\dfrac{\alpha}{2}} \left|\dfrac{4x^2}{\alpha^2} - 0.5\right| \, dx$
 \\
 
-Inside the interval $[-0.354\alpha, 0.354\alpha]$, or to be more specific $[0, 0.354\alpha]$ the equation $\left(\dfrac{4x^2}{\alpha^2} - 0.5\right)$ is negative.\\
-For $[0.354\alpha, 0.5\alpha]$, the equation is positive.\\
+Inside the interval $[-0.354\alpha, 0.354\alpha]$, or to be more specific $[0, 0.354\alpha]$ ,the equation $\left(\dfrac{4x^2}{\alpha^2} - 0.5\right)$ is Negative.\\
+For $[0.354\alpha, 0.5\alpha]$, the equation is Positive.\\
 
 Having these two conditions in mind, we will calculate seperately the integrals and then we will sum them up.
 \begin{itemize}
-	\item $\displaystyle \int_{0}^{0.354\alpha} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx = \int_{0}^{0.354\alpha}\left(0.5 - \frac{4x^2}{\alpha^2}\right)\, dx = \left[\frac{1}{2}x\right]^{0.354}_0 - \frac{4}{\alpha^2}\left[\frac{x^3}{3}\right]^{0.354}_0 = 0.188\alpha$
+	\item $\displaystyle \int_{0}^{0.354\alpha} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx = \int_{0}^{0.354\alpha}\left(0.5 - \dfrac{4x^2}{\alpha^2}\right)\, dx = \left[\dfrac{1}{2}x\right]^{0.354}_0 - \dfrac{4}{\alpha^2}\left[\dfrac{x^3}{3}\right]^{0.354}_0 = 0.188\alpha$
 	\vspace{3mm}
 	
-	\item $\displaystyle \int_{0.354\alpha}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx = \int_{0.354\alpha}^{\frac{\alpha}{2}} \left( \frac{4x^2}{\alpha^2} - 0.5\right) \, dx = \frac{4}{\alpha^2}\left[\frac{x^3}{3}\right]^{\frac{\alpha}{2}}_{0.354\alpha} - \left[\frac{1}{2}x\right]^{\frac{\alpha}{2}}_{0.354\alpha} = 0.035\alpha $
+	\item $\displaystyle \int_{0.354\alpha}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx = \int_{0.354\alpha}^{\dfrac{\alpha}{2}} \left( \dfrac{4x^2}{\alpha^2} - 0.5\right) \, dx = \dfrac{4}{\alpha^2}\left[\dfrac{x^3}{3}\right]^{\dfrac{\alpha}{2}}_{0.354\alpha} - \left[\dfrac{1}{2}x\right]^{\dfrac{\alpha}{2}}_{0.354\alpha} = 0.035\alpha $
 \end{itemize}
+\vspace{4mm}
 To sum up, the total value is \\
 \begin{equation}
-	\displaystyle\int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx = 0.153\alpha
+	\displaystyle\int_{0}^{\dfrac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx = 0.153\alpha
 \end{equation}
 \label{eq:integral1}
 \vspace{7mm}
 
 \underline{Integral 2}\\
 
-$\displaystyle \int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = \int_{\frac{\alpha}{2}}^{0.646\alpha}\left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx + \int_{0.646\alpha}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx$
+$\displaystyle \int_{\frac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = \int_{\frac{\alpha}{2}}^{0.646\alpha}\left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx + \int_{0.646\alpha}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx$
 \\
 
-Inside the interval $\left[\frac{\alpha}{2}, 0.646\alpha \right]$ the equation $\left(\dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5\right)$ is positive.\\
-For $[0.646\alpha, \alpha]$, the equation is negative.\\
+Inside the interval $\left[\dfrac{\alpha}{2}, 0.646\alpha \right]$ the equation $\left(\dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5\right)$ is Positive.\\
+For $[0.646\alpha, \alpha]$, the equation is Negative.\\
 
 Having these two conditions in mind, we will calculate seperately the integrals and then we will sum them up.
 \begin{itemize}
-	\item $\displaystyle \int_{\frac{\alpha}{2}}^{0.646\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = \int_{\frac{\alpha}{2}}^{0.646\alpha}\left(\frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right)\, dx =  \frac{4}{\alpha^2}\left[\frac{\left(x - \alpha\right)^3}{3}\right]^{0.646\alpha}_{\frac{\alpha}{2}} - \left[\frac{1}{2}x\right]^{0.646\alpha}_{\frac{\alpha}{2}} = 0.035\alpha $ 
+	\item $\displaystyle \int_{\frac{\alpha}{2}}^{0.646\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = \int_{\frac{\alpha}{2}}^{0.646\alpha}\left(\dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right)\, dx =  \dfrac{4}{\alpha^2}\left[\dfrac{\left(x - \alpha\right)^3}{3}\right]^{0.646\alpha}_{\frac{\alpha}{2}} - \left[\dfrac{1}{2}x\right]^{0.646\alpha}_{\frac{\alpha}{2}} = 0.035\alpha $ 
 	\vspace{3mm}
 	
 	\item $\displaystyle \int_{0.646\alpha}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx =\int_{0.646\alpha}^{\alpha} \left(0.5 - \frac{4(x-\alpha)^2}{\alpha^2} \right) \, dx = \left[\frac{1}{2}x\right]^{0.646\alpha}_{\alpha} -  \frac{4}{\alpha^2}\left[\frac{\left(x - \alpha\right)^3}{3}\right]^{0.646\alpha}_{\alpha} =
 	 0.236\alpha
 $\end{itemize}
-
+\vspace{4mm}
 To sum up, the total value is \\
 \begin{equation}
-	\displaystyle \int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = 0.236\alpha
+	\displaystyle \int_{\frac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx = 0.236\alpha
 \end{equation}
 \label{eq:integral2}
 
 After a lot of calculation, by summing up (Equation~\ref{eq:integral1}) and (Equation ~\ref{eq:integral2}) into (Equation ~\ref{eq:main_eq}), we have:
-\begin{gather}
-	\nu(\tilde{A}) = \frac{1}{\alpha} \left( \int_{0}^{\frac{\alpha}{2}} \left| \frac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\frac{\alpha}{2}}^{\alpha} \left| \frac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right) \\
-	= \frac{1}{\alpha}\left(0.153\alpha + 0.236\alpha \right) \\
+\begin{gather*}
+	\nu(\tilde{A}) = \dfrac{1}{\alpha} \left( \int_{0}^{\frac{\alpha}{2}} \left| \dfrac{4x^2}{\alpha^2} - 0.5 \right| \, dx + \int_{\frac{\alpha}{2}}^{\alpha} \left| \dfrac{4(x-\alpha)^2}{\alpha^2} - 0.5 \right| \, dx \right) \\
+	= \dfrac{1}{\alpha}\left(0.153\alpha + 0.236\alpha \right) \\
 	\rightarrow \nu(\tilde{A}) = 0.389
-\end{gather}
+\end{gather*}
 This result also represents the linear index of fuzziness of $A$. Again the result is independent of $\alpha$ due to the normalization over the interval $[0,\alpha]$.
-\vspace{4mm}
+\vspace{3mm}
 
 
 

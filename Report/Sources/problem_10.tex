@@ -1,5 +1,6 @@
 \section{Problem 10}
 The min-max composition of fuzzy relations is a method for combining two fuzzy relations to produce a new fuzzy relation. The process is somewhat analogous to matrix multiplication in linear algebra but uses the "min" and "max" operations instead of multiplication and addition. \\
+
 Given two fuzzy relations $R1$ and $R2$, with membership functions $\mu_{\tilde{R1}}(x,y)$ and $\mu_{\tilde{R2}}(y,z)$ respectively, the min-max composition $R = R1 \circ R2 $ has a membership function defined for each pair $(x,z)$ by:
 \begin{equation}
 	\mu_R(x, z) = \max_{y} \min(\mu_{R1}(x, y), \mu_{R2}(y, z)

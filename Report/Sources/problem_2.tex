@@ -15,12 +15,11 @@ We select 30 data randomly from that interval and all parameters are initialized
 	\caption{Input function in the specified area and the randomly assigned train data points.}
 \end{figure}
 
-For the randomly assigned data points, we added a custom seed number using in order for the results to be comparable but still use randomness.
-The number of centers define the total number of hidden layers in the network. So, in order to train it, thus impacting its accuracy.
+For the randomly assigned data points, we added a custom seed number in order for the results to be comparable but to still use randomness.
+The number of centers define the total number of hidden layers in the network.Consequently, training it will affect its accuracy.\\
 
 Every arithmetic operation is done in matrix mode using \verb|np.array| object type for better scalability and automation.
-For learning rate values $\alpha$ we used $\left[0.001, 0.005, 0.01\right]$ and for center the values $\left[4, 8, 12, 20\right]$ as suggested. As for the iterations number, we opted for $20\cdot 10^3$ as we didn't want any possible bottleneck in the epoch number.
-
+For learning rate values $\alpha$ we used $\left[0.001, 0.005, 0.01\right]$ and for center the values $\left[4, 8, 12, 20\right]$, as suggested. As for the iterations number, we opted for $20\cdot 10^3$ as we didn't want any possible bottleneck in the epoch number.\\
 
 \begin{figure}[htbp]
 	\centering
@@ -114,7 +113,8 @@ Conversely, increasing the number of centers enables the network to model more c
 Again, these observations are very clear from the first change in the number of centers, from $4$ to $8$. The latter network has a smaller error across all data points when compared to the input signal. This increase of quality is not observed only in this increase of center numbers, but to all increases.
 
 Next, let's delve into the impact of the learning rate on the RBF layer's output. A higher learning rate accelerates the convergence of the training process, enabling the model to reach a satisfactory solution faster.
-However, a learning rate that is too high might leads to oscillations or divergence, hindering the convergence process.
+However, a learning rate that is too high might lead to oscillations or divergence, hindering the convergence process.
 From our calculations, when $\alpha$ is increased above $0.05$, the system is diverging and by a large factor. 
 On the other hand, a lower learning rate ensures more cautious updates to the model parameters, reducing the risk of divergence but potentially prolonging the convergence process.
 Thus, the output dynamics with different learning rates exhibit variations in convergence speed and possibly final performance, with an optimal learning rate striking a balance between convergence efficiency and stability.
+\vspace{3mm}
